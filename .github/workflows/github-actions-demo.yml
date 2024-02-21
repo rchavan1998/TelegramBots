@@ -1,0 +1,33 @@
+name: Manual Workflow Migration
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    strategy:
+      fail-fast: true
+      matrix:
+        java: [11, '11-ea']
+        include:
+          - java: 11
+            distribution: 'openjdk'
+          - java: '11-ea'
+            distribution: 'openjdk'
+          - java: 11
+            distribution: 'oraclejdk'
+          - java: '11-ea'
+            distribution: 'oraclejdk'
+
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: JDK Setup
+        uses: actions/setup-java@v4
+        with:
+          java-version: ${{matrix.java}}
+          distribution: ${{matrix.distribution}}
