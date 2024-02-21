@@ -31,6 +31,11 @@ jobs:
       - name: Install dependencies
         run: mvn -q install -Dgpg.skip
 
+      - name: maven compiling and testing
+        run: mvn -q clean compile test
+
+      
+
 
       
       
