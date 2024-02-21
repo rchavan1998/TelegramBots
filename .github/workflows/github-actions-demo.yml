@@ -10,24 +10,16 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        java: 11
-        include:
-          - java: 11
-            distribution: 'openjdk'
-          # - java: '11-ea'
-          #   distribution: 'openjdk'
-          - java: 11
-            distribution: 'oracle'
-          # - java: '11-ea'
-          #  distribution: 'oracle'
+        java: ['11','ea']
+        
 
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: JDK Setup
-        uses: actions/setup-java@v
+      - name: JDK Setup - openjdk 
+        uses: actions/setup-java@v2
         with:
           java-version: ${{matrix.java}}
-          distribution: ${{matrix.distribution}}
+          distribution: adopt
