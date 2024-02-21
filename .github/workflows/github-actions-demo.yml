@@ -51,9 +51,8 @@ jobs:
         if: success() 
         run: |
           curl -X POST -H "Content-Type: application/json" -d '{"message": "Build successful"}' \
-          ${{secrets.WEBHOOK_SECRET}} 
-      
-
+          https://dummyservice.com/webhook-endpoint
+          -u ${{ secrets.WEBHOOK_SECRET }}
       
 
 
