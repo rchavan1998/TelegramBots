@@ -16,15 +16,12 @@ jobs:
         uses: actions/checkout@v4
 
       - name: JDK Setup - openjdk 
-        uses: actions/setup-java@v2
+        uses: actions/setup-java@v4
         with:
           java-version: 11
-          distribution: zulu
+          distribution: adopt
+
       
-      - name: JDK Setup - oraclejdk 
-        uses: oracle-actions/setup-java@v1
-        with:
-          website: oracle.com
-          release: 11
-          java-version: 11
+      
+      
           
