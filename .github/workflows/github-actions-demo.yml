@@ -21,11 +21,13 @@ jobs:
           java-version: 11
           distribution: adopt
 
-      - name: 'Set up Early-Access build of a named project from jdk.java.net'
+      - name: JDK Setup - oraclejdk
         uses: oracle-actions/setup-java@v1
         with:
-          website: jdk.java.net
-          release: loom
+          website: oracle.com
+          release: 17
+          version: 17.0.1 
+      
 
       
       
