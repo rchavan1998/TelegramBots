@@ -28,6 +28,9 @@ jobs:
           release: 17
           version: 17.0.1 
       
+      - name: Install dependencies
+        run: mvn -q install -Dgpg.skip
+
 
       
       
