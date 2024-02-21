@@ -17,9 +17,9 @@ jobs:
           - java: '11-ea'
             distribution: 'openjdk'
           - java: 11
-            distribution: 'oraclejdk'
+            distribution: 'oracle'
           - java: '11-ea'
-            distribution: 'oraclejdk'
+            distribution: 'oracle'
 
     runs-on: ubuntu-latest
     steps:
