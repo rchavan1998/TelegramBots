@@ -47,12 +47,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-m2
 
-      - name: Notification equivalent for webhook provided
-        if: success() 
-        run: |
-          curl -X POST -H "Content-Type: application/json" -d '{"message": "Build successful"}' \
-          https://dummyservice.com/webhook-endpoint
-          -u ${{ secrets.WEBHOOK_SECRET }}
+      #removed notifications. handled by github seperately in webhooks.
       
 
 
