@@ -10,7 +10,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        java: [11, '11-ea']
+        java: 11
         include:
           - java: 11
             distribution: 'openjdk'
