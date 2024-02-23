@@ -23,10 +23,11 @@ jobs:
     - run: mvn -q clean compile test
     - run: bash <(curl -s https://codecov.io/bash)
       if: "${{ success() }}"
-    - uses: distributhor/workflow-webhook@v3.0.2
-      env:
-        webhook_url: "${{ secrets.WEBHOOK_URL }}"
-        webhook_secret: "${{ secrets.WEBHOOK_SECRET }}"
+      #webhook url not present in travis file
+    # - uses: distributhor/workflow-webhook@v3.0.2
+    #   env:
+    #     webhook_url: "${{ secrets.WEBHOOK_URL }}"
+    #     webhook_secret: "${{ secrets.WEBHOOK_SECRET }}"
 #     # This item has no matching transformer
 #     - email: false
     strategy:
