@@ -32,8 +32,8 @@ jobs:
     strategy:
       matrix:
         jdk:
-        - oraclejdk11
-        - oraclejdk-ea
-        - openjdk11
-        - openjdk-ea
+        - 11
+        - 17
+        # - openjdk11
+        # - openjdk-ea
 #       # 'allow_failures' transformations are currently unsupported.
