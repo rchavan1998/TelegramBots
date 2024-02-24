@@ -23,7 +23,6 @@ jobs:
         with:
           java-version: ${{ matrix.java }}
           distribution: 'zulu' # Correct placement of 'with' block
-
       # with:
       #   bundler-cache: TRUE
       #   configuration-cache-enabled: FALSE
@@ -32,8 +31,8 @@ jobs:
       # uses: actions/checkout@version
       env:
         github_token: ${{ github.token }}
-    - name: build with maven-
-      run: |
+      - name: build with maven-
+        run: |
           bash <(curl -s https://codecov.io/bash)
           mvn -q clean compile test
 
