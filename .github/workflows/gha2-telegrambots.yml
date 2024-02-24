@@ -1,0 +1,32 @@
+name: placeholder_Name
+
+on:
+  pull_request:
+    branches: branch-name
+  push:
+    branches:
+    - branch-2
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        java:
+          19-ea
+          18-ea
+    runs-on: ubuntu-latest
+    steps:
+      with:
+        bundler-cache: TRUE
+        configuration-cache-enabled: FALSE
+      with:
+        java-version: ${{ matrix.java }}
+      uses: actions/setup-java@version
+      uses: actions/checkout@version
+      env:
+        github_token: ${{ github.token }}
+    - name: build with maven-
+      run:
+        bash <(curl -s https://codecov.io/bash)
+        mvn -q clean compile test
+
