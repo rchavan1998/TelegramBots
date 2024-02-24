@@ -24,8 +24,8 @@ jobs:
           java-version: ${{ matrix.java }}
           distribution: 'zulu' # Correct placement of 'with' block
       - name: build with maven-
-        env:
-        github_token: ${{ github.token }}
+        # env:
+        # github_token: ${{ github.token }}
       
         run: |
           bash <(curl -s https://codecov.io/bash)
